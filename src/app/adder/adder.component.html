@@ -1,0 +1,5 @@
+<button *ngIf='!creatorVisible; ' type="button" (click)='showListCreator()' class="btn btn-primary"> <i class="fas fa-plus"></i></button>
+<div *ngIf='creatorVisible; '><app-list-creator  (NewWindowAdded)='addNewWindow($event)'></app-list-creator></div>
+
+
+<button *ngFor='let window of windowNames' type="button" class="btn btn-success" > {{window}} </button>

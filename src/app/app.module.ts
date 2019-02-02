@@ -7,12 +7,16 @@ import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { ModalModule } from 'ngx-bootstrap/modal';
 import { MainMenuComponent } from './main-menu/main-menu.component';
+import { AdderComponent } from './adder/adder.component';
+import { WindowVievComponent } from './window-viev/window-viev.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ListCreatorComponent,
-    MainMenuComponent
+    MainMenuComponent,
+    AdderComponent,
+    WindowVievComponent
   ],
   imports: [
     BrowserModule,
