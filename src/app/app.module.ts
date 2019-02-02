@@ -2,19 +2,28 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { ListCreaterComponent } from './list-creater/list-creater.component';
 import { ListCreatorComponent } from './list-creator/list-creator.component';
+import { BsDropdownModule } from 'ngx-bootstrap/dropdown';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
+import { ModalModule } from 'ngx-bootstrap/modal';
+import { MainMenuComponent } from './main-menu/main-menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ListCreaterComponent,
-    ListCreatorComponent
+    ListCreatorComponent,
+    MainMenuComponent
   ],
   imports: [
+    BrowserModule,
+    BsDropdownModule.forRoot(),
+    TooltipModule.forRoot(),
+    ModalModule.forRoot(),
     BrowserModule
   ],
+  exports: [BsDropdownModule, TooltipModule, ModalModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ]
 })
 export class AppModule { }
+export class AppBootstrapModule {}
