@@ -9,6 +9,8 @@ import { ModalModule } from 'ngx-bootstrap/modal';
 import { MainMenuComponent } from './main-menu/main-menu.component';
 import { AdderComponent } from './adder/adder.component';
 import { WindowVievComponent } from './window-viev/window-viev.component';
+import {DragDropModule , moveItemInArray, transferArrayItem  } from '@angular/cdk/drag-drop';
+
 
 @NgModule({
   declarations: [
@@ -23,7 +25,8 @@ import { WindowVievComponent } from './window-viev/window-viev.component';
     BsDropdownModule.forRoot(),
     TooltipModule.forRoot(),
     ModalModule.forRoot(),
-    BrowserModule
+    BrowserModule,
+    DragDropModule
   ],
   exports: [BsDropdownModule, TooltipModule, ModalModule],
   providers: [],

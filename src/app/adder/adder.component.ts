@@ -6,9 +6,8 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./adder.component.css']
 })
 export class AdderComponent implements OnInit {
-   ListCreator: EventEmitter<boolean> = new EventEmitter();
+  @Output() NewWindowAdded: EventEmitter<string>  = new EventEmitter<string>();
   creatorVisible: boolean = false;
-  windowNames: string[] = [];
   constructor() { }
 
   ngOnInit() {
@@ -16,13 +15,13 @@ export class AdderComponent implements OnInit {
 
    showListCreator() {
     this.creatorVisible = !this.creatorVisible;
-
    }
-    addNewWindow(newWindowName: string) {
-      this.windowNames.push(newWindowName);
-      console.log(newWindowName);
+   addNewWindow(newWindowName: string) {
+    if (newWindowName !== '') {
+      this.NewWindowAdded.emit(newWindowName);
       this.showListCreator();
     }
+  }
 
 
 

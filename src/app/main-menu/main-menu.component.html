@@ -1,12 +1,12 @@
-<div class="row">
+<div *ngIf='!isSingleBoradVisible' class="row">
 
-  <div class="col">
-      <app-adder></app-adder>
+  <div *ngFor=' let board of listOfWindows' class="col-4">
+        <button type="button" (click)='changeBoard(board)' class="btn btn-success" >{{board.WindowName}}</button>
   </div>
-  <div class="col">
-    2 of 3
-  </div>
-  <div class="col">
-    3 of 3
+  <div class="col-4">
+      <app-adder (NewWindowAdded)='addWindow($event)'></app-adder>
   </div>
 </div>
+
+<app-window-viev  (backToMenu)='changeViev($event)' *ngIf='isSingleBoradVisible' [board]='currentBoard'></app-window-viev>
+
